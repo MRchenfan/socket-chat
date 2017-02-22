@@ -1,0 +1,24 @@
+{
+  "name": "socket-chat",
+  "authors": [
+    "Damon <18133627692@163.com>"
+  ],
+  "description": "",
+  "main": "bin/www",
+  "keywords": [
+    "socket.io"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "socket.io-client": "^1.7.2",
+    "bootstrap": "^3.3.7"
+  }
+}
