@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+
+	<link rel='stylesheet' href='css/style.min.css'/>
+</head>
+<body>
+	<br><br><br><br><br><br><br>	
+	<div class="login col-sm-6 col-sm-offset-3">
+		<div class="panel panel-default">
+			<div class="panel-body clearfix">
+				<form class="form-horizontal" name="userForm" novalidate>
+					<div class="form-group">
+						<label class="col-sm-2">name</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="text" name="name" placeholder="your name" minlength="4" maxlength="10" required>
+							<p class="help-block small hide">
+								name repeat 
+							</p>
+							<p class="help-block small hide">
+								name required
+							</p>
+							<p class="help-block small hide">
+								name length should be longer then 4
+							</p>
+							<p class="help-block small hide">
+								name length should be shorter then 10
+							</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2">email</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" name="email" placeholder="your@email.com">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2">password</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="password" name="password" placeholder="******" required>
+							<p class="help-block small hide">
+								password is required
+							</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10 col-sm-offset-2">
+							<a class="btn btn-primary signin-btn">
+								Sign in
+							</a>
+							<a class="pull-right login-btn">
+								Log in
+							</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<script src="lib/jquery/dist/jquery.min.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/signin.min.js"></script>
+</body>
+</html>

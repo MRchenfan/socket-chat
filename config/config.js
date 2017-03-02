@@ -5,5 +5,6 @@ module.exports = {
 		uri: 'mongodb://localhost/chat',
 		user: '',
 		passwd: ''
-	}
+	},
+	devHost: 'http://localhost:3000'
 }

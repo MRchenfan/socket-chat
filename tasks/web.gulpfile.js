@@ -130,7 +130,7 @@ gulp.task('css', () => {
 gulp.task('js', () => {
 
 	return gulp.src(srcdir.js + '**/*.js')
-		.pipe(uglifyJs())
+		// .pipe(uglifyJs())
 		.pipe(rename((filePath) => {
 
 			filePath.extname = '.min.js'

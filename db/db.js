@@ -1,6 +1,9 @@
 
 let config = require('../config/config')
 let mongoose = require('mongoose')
+
+mongoose.Promise = require('bluebird')
+
 let uri = config.db.uri
 mongoose.connect(uri)
 
@@ -18,5 +21,6 @@ db.on('error', (err) => {
 
 // register models
 require('./models/user-model')
+require('./models/message-model')
 
 module.exports = db

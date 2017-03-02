@@ -1,10 +1,11 @@
-let db = require('../../../db')
+let db = require('../../../db/db')
 
 let UserModel = db.model('UserModel')
 
+
 let newUser = new UserModel({
-	name: 'wuya',
-	email: '0980980@xfewy.com',
+	name: 'test',
+	email: 'test@163.com',
 	passwd: '123456',
 	role: 'admin',
 	gender: 'man',

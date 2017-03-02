@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>socket.io chat</title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+
+	<link rel='stylesheet' href='css/style.css'/>
+	<link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+	<div class="row chat-container">
+
+		<div class="search-panel col-sm-3">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<form class="form-inline">
+						<input type="text" class="form-control">
+						<button class="btn btn-primary">
+							Search
+						</button>
+					</form>
+				</div>
+				<ul class="list-group">
+					<li class="list-group-item">
+						<span>name</span>
+						<button class="btn btn-warning btn-xs pull-right">
+							添加好友
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="friend-list col-sm-3">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						friend list
+						<button class="btn btn-warning btn-xs pull-right">
+							login/logout
+						</button>
+					</h3>
+				</div>
+				
+				<ul class="list-group">
+					<a class="list-group-item" data-name="xiaofan">xiaofan</a>
+					<a class="list-group-item" data-name="junsheng">junsheng</a>
+				</ul>
+			</div>
+		</div>
+
+		<div class="chat-panel col-sm-6">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title" data-name="friend name">friend name</h3>
+				</div>
+				<div class="panel-body">
+					<ul class="message-list">
+						<li class="message-list-item send">
+							<img class="head send-head" src="img/0481.png" alt="send">
+							<a class="message-content">
+								send message
+							</a>
+						</li>
+						<li class="message-list-item receive">
+							<img class="head receive-head" src="img/0482.png" alt="receive">
+							<a class="message-content">
+								receive message
+							</a>
+						</li>
+						<li class="message-list-item send">
+							<img class="head send-head" src="img/0481.png" alt="send">
+							<a class="message-content">
+								send message
+							</a>
+						</li>
+						<li class="message-list-item receive">
+							<img class="head receive-head" src="img/0482.png" alt="receive">
+							<a class="message-content">
+								receive message
+							</a>
+						</li>
+						<li class="message-list-item send">
+							<img class="head send-head" src="img/0481.png" alt="send">
+							<a class="message-content">
+								send message
+							</a>
+						</li>
+						<li class="message-list-item receive">
+							<img class="head receive-head" src="img/0482.png" alt="receive">
+							<a class="message-content">
+								receive message
+							</a>
+						</li>
+						<li class="message-list-item send">
+							<img class="head send-head" src="img/0481.png" alt="send">
+							<a class="message-content">
+								send message
+							</a>
+						</li>
+						<li class="message-list-item receive">
+							<img class="head receive-head" src="img/0482.png" alt="receive">
+							<a class="message-content">
+								receive message
+							</a>
+						</li>
+						<li class="message-list-item send">
+							<img class="head send-head" src="img/0481.png" alt="send">
+							<a class="message-content">
+								send message
+							</a>
+						</li>
+						<li class="message-list-item receive">
+							<img class="head receive-head" src="img/0482.png" alt="receive">
+							<a class="message-content">
+								receive message
+							</a>
+						</li>
+						<li class="message-list-item send">
+							<img class="head send-head" src="img/0481.png" alt="send">
+							<a class="message-content">
+								send message
+							</a>
+						</li>
+						<li class="message-list-item receive">
+							<img class="head receive-head" src="img/0482.png" alt="receive">
+							<a class="message-content">
+								receive message
+							</a>
+						</li>
+						<li class="message-list-item send">
+							<img class="head send-head" src="img/0481.png" alt="send">
+							<a class="message-content">
+								send message
+							</a>
+						</li>
+						<li class="message-list-item receive">
+							<img class="head receive-head" src="img/0482.png" alt="receive">
+							<a class="message-content">
+								receive message
+							</a>
+						</li>
+						<li class="message-list-item send">
+							<img class="head send-head" src="img/0481.png" alt="send">
+							<a class="message-content">
+								send message
+							</a>
+						</li>
+						<li class="message-list-item receive">
+							<img class="head receive-head" src="img/0482.png" alt="receive">
+							<a class="message-content">
+								receive message
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="panel-footer clearfix">
+					<div class="col-sm-10 col-xs-10">
+						<input type="text" class="form-control input-text">
+					</div>
+					<div class="col-sm-2 col-xs-2">
+						<button class="btn btn-primary send-btn pull-right">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="lib/jquery/dist/jquery.js"></script>
+	<script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="lib/socket.io-client/dist/socket.io.js"></script>
+	
+	<script src="js/utils.js"></script>
+	<script src="js/list.js"></script>
+	<script src="js/chat-client.js"></script>
+	<script src="js/main-test.js"></script>
+</body>
+</html>

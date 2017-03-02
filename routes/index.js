@@ -1,9 +1,14 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', (req, res, next) => {
 
-module.exports = router;
+	if (!req.session.user) {
+		res.redirect('users/login')
+		return
+	}
+  res.render('index', { title: 'socket chat' })
+})
+
+module.exports = router
