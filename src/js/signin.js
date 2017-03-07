@@ -1,6 +1,6 @@
 $(function() {
 
-	let hostUrl = 'http://localhost:3003'
+	let hostUrl = app.config.host;
 	$('.login-btn').click(function(e) {
 
 		location.href = 'login.html'

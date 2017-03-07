@@ -5,7 +5,7 @@ var ChatPanelComponent = function(container) {
 		friendName: 'dom'
 	};
 	this.changeTarget = function(name) {
-
+		this.container.show();
 		if (name == this.to) {
 			return;
 		}
@@ -99,5 +99,12 @@ var ChatPanelComponent = function(container) {
 		console.log('send message to ' + message.to);
 		app.chatClient.send(message);
 		self.send(message);
+	});
+
+	this.container.find('.send-text').on('keyup', function(e) {
+
+		if (e.keyCode === 13) {
+			self.container.find('.send-btn').click();
+		}
 	});
 }

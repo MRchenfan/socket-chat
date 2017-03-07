@@ -1,18 +1,9 @@
 $(function() {
-	// for dev
-	$.ajaxSetup({
-		crossDomain: true,
-		xhrFields: {
-			withCredentials: true
-		}
-	});
 
-	var app = {
-		chatPanel: new ChatPanelComponent($('.chat-panel')),
-		friendList: new FriendListComponent($('.friend-list-wrapper')),
-		user: {},
-		chatClient: new ChatClient()
-	}
+	app.chatPanel = new ChatPanelComponent($('.chat-panel'));
+	app.friendList = new FriendListComponent($('.friend-list-wrapper'));
+	app.user = {};
+	app.chatClient = new ChatClient();
 
 	app.chatClient
 		.on('connect', function() {
@@ -71,17 +62,17 @@ $(function() {
 			}
 		})
 
-	$.get('http://localhost:3003/users/getUser', function(res) {
+	$.get(app.config.host + '/users/getUser', function(res) {
 
 		console.log(res);
 		if (!res.success) {
 
 			alert('用户登录失败')
-			location.href = 'login.html'
+			location.href = app.router.login;
 		}
 		app.user = res.user;
 		app.chatClient.init({
-			url: 'http://127.0.0.1:3003',
+			url: app.config.host,
 			name: app.user.name,
 			passwd: app.user.passwd,
 			io: io, // socket.io
@@ -109,7 +100,7 @@ $(function() {
 
 			var name = $('.search-text').val().trim();
 			if (!name) return;
-			$.get('http://localhost:3003/users/search', {
+			$.get(app.config.host + '/users/search', {
 				name: name
 			}, function(res) {
 
@@ -118,14 +109,14 @@ $(function() {
 				var str = '';
 				for (var i = 0; i < res.result.length; i++) {
 					var u = res.result[i];
-					str += 
-					`<a class="list-group-item">
-						<span>` + u.name + `</span>
-						/
-						<span class="small">` + u.email + `</span>
-						<button class="add-btn btn btn-warning btn-xs pull-right" data-name="` + u.name + `">
-							添加好友
-						</button>
+					str +=
+						`<a class="list-group-item">
+					<span>` + u.name + `</span>
+					/
+					<span class="small">` + u.email + `</span>
+					<button class="add-btn btn btn-warning btn-xs pull-right" data-name="` + u.name + `">
+					添加好友
+					</button>
 					</a>`;
 				}
 				$('.search-result').html(str);
@@ -136,7 +127,7 @@ $(function() {
 
 			var name = $(this).attr('data-name');
 			if (!name) return;
-			$.get('http://localhost:3003/users/addFriend', {
+			$.get(app.config.host + '/users/addFriend', {
 				name: name
 			}, function(res) {
 
@@ -155,11 +146,11 @@ $(function() {
 	// log out
 	$('.logout-btn').click(function() {
 
-		$.get('http://localhost:3003/users/logout', function(res) {
+		$.get(app.config.host + '/users/logout', function(res) {
 
 			if (res.success) {
 
-				location.href = 'login.html';
+				location.href = app.router.login;
 			}
 		});
 	});
